@@ -19,7 +19,14 @@ class LoginForm extends Model
 
     private $_user = false;
 
-
+    public function attributeLabels()
+    {
+        return [
+            'username' => Yii::t('app', 'USER_USERNAME'),
+            'password' => Yii::t('app', 'USER_PASSWORD'),
+            'rememberMe' => Yii::t('app', 'USER_REMEMBER_ME'),
+        ];
+    }
     /**
      * @return array the validation rules.
      */
@@ -38,17 +45,18 @@ class LoginForm extends Model
     /**
      * Validates the password.
      * This method serves as the inline validation for password.
-     *
-     * @param string $attribute the attribute currently being validated
-     * @param array $params the additional name-value pairs given in the rule
      */
-    public function validatePassword($attribute, $params)
+    public function validatePassword()
     {
         if (!$this->hasErrors()) {
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError('password', Yii::t('app', 'ERROR_WRONG_USERNAME_OR_PASSWORD'));
+            } elseif ($user && $user->status == User::STATUS_BLOCKED) {
+                $this->addError('username', Yii::t('app', 'ERROR_PROFILE_BLOCKED'));
+            } elseif ($user && $user->status == User::STATUS_WAIT) {
+                $this->addError('username', Yii::t('app', 'ERROR_PROFILE_NOT_CONFIRMED'));
             }
         }
     }
@@ -61,8 +69,9 @@ class LoginForm extends Model
     {
         if ($this->validate()) {
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
+        } else {
+            return false;
         }
-        return false;
     }
 
     /**
