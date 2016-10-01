@@ -1,13 +1,15 @@
 <?php
 return [
     'NAV_HOME' => 'Главная',
-    'NAV_CONTACT' => 'Связь',
+    'NAV_ADMIN' => 'Админ панель',
+    'NAW_CONTACT' => 'Связь',
     'NAV_SIGNUP' => 'Регистрация',
     'NAV_LOGIN' => 'Вход',
     'NAV_PROFILE' => 'Профиль',
     'NAV_LOGOUT' => 'Выход',
 
     'BUTTON_SEND' => 'Отправить',
+    'BUTTON_CREATE' => 'Создать',
     'BUTTON_SAVE' => 'Сохранить',
     'BUTTON_UPDATE' => 'Редактировать',
     'BUTTON_DELETE' => 'Удалить',
@@ -42,6 +44,9 @@ return [
     'USER_CURRENT_PASSWORD' => 'Текущий пароль',
     'USER_NEW_PASSWORD' => 'Новый пароль',
     'USER_REPEAT_PASSWORD' => 'Повторите новый пароль',
-    'TITLE_PASSWORD_CHANGE' => 'Смена пароля'
+    'TITLE_PASSWORD_CHANGE' => 'Смена пароля',
+    'ADMIN_USERS' => 'Управление пользователями',
+    'CREATE_USER' => 'Создать пользователя',
+
 
 ];

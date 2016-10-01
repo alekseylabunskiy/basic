@@ -1,7 +1,8 @@
 <?php
 return [
     'NAV_HOME' => 'Home',
-    'NAV_CONTACT' => 'Contact',
+    'NAW_CONTACT' => 'Contact',
+    'NAV_ADMIN' => 'Admin Panel',
     'NAV_SIGNUP' => 'Signup',
     'NAV_LOGIN' => 'Login',
     'NAV_LOGOUT' => 'Logout',
@@ -9,6 +10,7 @@ return [
 
     'BUTTON_SEND' => 'Send',
     'BUTTON_SAVE' => 'Save',
+    'BUTTON_CREATE' => 'Create',
     'BUTTON_UPDATE' => 'Update',
     'BUTTON_DELETE' => 'Delete',
 
@@ -41,6 +43,8 @@ return [
     'USER_CURRENT_PASSWORD' => 'Current Password',
     'USER_NEW_PASSWORD' => 'New password',
     'USER_REPEAT_PASSWORD' => 'Repeat new password',
-    'TITLE_PASSWORD_CHANGE' => 'Password change'
+    'TITLE_PASSWORD_CHANGE' => 'Password change',
+    'ADMIN_USERS' => 'Admin users',
+    'CREATE_USER' => 'Create user'
 
 ];
